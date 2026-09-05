@@ -1,17 +1,12 @@
-# Matriz de build do GitHub Actions.
-#
-# board target novo (ZMK Zephyr 4.1, 09/12/2025): seeeduino_xiao_ble -> xiao_ble//zmk
+# board target novo (ZMK Zephyr 4.1): seeeduino_xiao_ble -> xiao_ble//zmk
 # https://zmk.dev/blog/2025/12/09/zephyr-4-1
-#
-# O lado central (left) carrega o ZMK Studio: snippet studio-rpc-usb-uart expoe
-# o endpoint CDC ACM que o app zmk.studio usa pra editar o keymap ao vivo.
 ---
 include:
   - board: xiao_ble//zmk
-    shield: corny_left rgbled_adapter
+    shield: chipper_left rgbled_adapter
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: xiao_ble//zmk
-    shield: corny_right rgbled_adapter
+    shield: chipper_right rgbled_adapter
   - board: xiao_ble//zmk
     shield: settings_reset

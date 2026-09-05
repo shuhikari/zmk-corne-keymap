@@ -1,0 +1,25 @@
+if SHIELD_CHIPPER_LEFT
+
+# "v2" marca este build: se o dispositivo ainda aparecer como "Corny" (sem v2),
+# o flash desta correcao nao pegou.
+config ZMK_KEYBOARD_NAME
+    default "Corny v2"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_CHIPPER_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "Corny v2 Right"
+
+endif
+
+if SHIELD_CHIPPER_LEFT || SHIELD_CHIPPER_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
