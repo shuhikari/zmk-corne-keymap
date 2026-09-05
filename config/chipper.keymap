@@ -21,9 +21,14 @@
       compatible = "zmk,behavior-hold-tap";
       label = "HOMEROW_MODS";
       #binding-cells = <2>;
-      tapping-term-ms = <150>;
-      quick-tap-ms = <0>;
-      flavor = "tap-preferred";
+      // 280ms: folga suficiente pra digitacao normal nao virar modificador.
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      // ignora o hold nos primeiros 150ms depois de qualquer tecla: e o que
+      // impede o disparo acidental no meio de uma palavra.
+      require-prior-idle-ms = <150>;
+      // segurar logo apos tocar a mesma tecla repete a letra em vez de segurar o mod.
+      quick-tap-ms = <175>;
       bindings = <&kp>, <&kp>;
     };
   };
