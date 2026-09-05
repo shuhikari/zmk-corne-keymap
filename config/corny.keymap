@@ -12,6 +12,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+// behaviors &ind_bat / &ind_con / &ind_lyr do modulo zmk-rgbled-widget
+#include <behaviors/rgbled_widget.dtsi>
+
 / {
   behaviors {
     hm: homerow_mods {
